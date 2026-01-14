@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { userAtom } from "@/store/atoms";
 import { useAtom } from "jotai";
 import { supabase } from "@/utils/supabase/client";
-// import { toast } from "@/hooks/use-toast";
 import { toast } from "sonner";
 /** UI 컴포넌트 */
 import {

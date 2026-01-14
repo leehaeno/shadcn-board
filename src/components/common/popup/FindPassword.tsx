@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { supabase } from "@/utils/supabase/client";
-//import { toast } from "@/hooks/use-toast";
 import { toast } from "sonner";
 import useEmailCheck from "@/hooks/use-email";
 /** UI 컴포넌트 */
@@ -48,7 +47,7 @@ function FindPasswordPopup({ children }: Props) {
 
         try {
             await supabase.auth.resetPasswordForEmail(email, {
-                redirectTo: "http://localhost:3000/password-setting",
+                redirectTo: "http://hyho-shadcn-board.vercel.app/password-setting",
             });
             toast.success("비밀번호 초기화 이메일을 전송했습니다.", {
                 description: "이메일 주소로 비밀번호 초기화 링크를 전송했으니, 이메일을 확인하여 비밀번호를 변경하세요!",

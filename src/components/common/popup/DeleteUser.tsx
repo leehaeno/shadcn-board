@@ -4,8 +4,6 @@ import { useAtomValue } from "jotai";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
 import { userAtom, tasksAtom } from "@/store/atoms";
-// import { createClient } from "@/utils/supabase/auth";
-// import { toast } from "@/hooks/use-toast";
 import { toast } from "sonner";
 /** UI 컴포넌트 */
 import {
