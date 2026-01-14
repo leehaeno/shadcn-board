@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_KR } from "next/font/google";
+import { SideNavigation } from "@/components/common";
 import { Toaster } from "@/components/ui"
 // 전역 css
 import "@/styles/globals.css";
 import "@/styles/main.scss";
 
 const NOTO_SANS_KR = Noto_Sans_KR({subsets: ["latin"]});
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Shadcn UI - TODO-TASKBOARD",
@@ -18,11 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-        <body className={NOTO_SANS_KR.className}>
-            {children}
-            <Toaster />
-        </body>
-    </html>
+    <>
+        <div className="page">
+          <SideNavigation />
+          <main className="page__main">{children}</main>
+        </div>
+        <Toaster />
+    </>
   );
 }
