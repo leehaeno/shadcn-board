@@ -11,7 +11,7 @@ function useSearch() {
     const router = useRouter();
     const user = useAtomValue(userAtom);
     const { getTasks } = useGetTasks();
-    const [tasks, setTasks] = useAtom(tasksAtom);
+    const [, setTasks] = useAtom(tasksAtom);
 
     const search = async (searchTerm: string) => {
         if (!user) return;
