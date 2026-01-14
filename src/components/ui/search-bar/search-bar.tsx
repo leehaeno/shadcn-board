@@ -3,9 +3,13 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { SearchIcon } from "lucide-react";
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{}
+export interface InputProps 
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+}
 
-const SearchBar = React.forwardRef<HTMLInputElement, InputProps> (({ className, propTypes, ...props}, ref ) => {
+const SearchBar = React.forwardRef<HTMLInputElement, InputProps> (({ className, ...props}, ref ) => {
     return  (
         <div className={cn("flex w-full h-10 items-center rounded-md border border-input bg-white pl-3 text-sm ring-offset-background focus-within:ring-1 focus-within:ring-ring focus-within:ring-offset-2", className)}>
             <SearchIcon className="h-[18px] w-[18px]" />

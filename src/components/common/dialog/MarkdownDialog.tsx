@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { useAtomValue } from "jotai";
 import { taskAtom } from "@/store/atoms";
 // 훅 Hooks
-import { useCreateBoard, useGetTaskById } from "@/hooks/apis";
+import { useCreateBoard } from "@/hooks/apis";
 import { toast } from "sonner";
 // UI 컴포넌트
 import MDEditor from "@uiw/react-md-editor";

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useAtomValue } from "jotai";
 import { userAtom } from "@/store/atoms";
-import { supabase } from "@/utils/supabase/client";
 // 훅 Hooks
 import { useGetTasks, useCreateTask, useSearch } from "@/hooks/apis";
 // UI 컴포넌트
